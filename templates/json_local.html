@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Local JSON from Flask</title>
+{% if users %}
+    <h1>Users {{usertype}}</h1>
+    {% for user in users %}
+        <p>{{ user['name'] }}, {{ user['department'] }}</p>
+    {% endfor %}
+{% else %}
+  <h1>No users</h1>
+{% endif %}

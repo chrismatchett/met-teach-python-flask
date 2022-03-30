@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Add JSON from Flask</title>
+{% if users %}
+    <h1>Users</h1>
+    {% for user in users %}
+        <p>{{ user['name'] }}</p>
+    {% endfor %}
+{% else %}
+  <h1>No users</h1>
+{% endif %}

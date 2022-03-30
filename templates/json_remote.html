@@ -1,0 +1,10 @@
+<!doctype html>
+<title>Remote JSON from Flask</title>
+{% if urls %}
+    <h1>URLs</h1>
+    {% for key, url in urls.items() %}
+        <p>{{ key }}: <a href="{{ url }}">{{url}}</a></p>
+    {% endfor %}
+{% else %}
+  <h1>No URLs</h1>
+{% endif %}
