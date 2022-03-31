@@ -28,15 +28,6 @@ if download:
         urlretrieve(link, filename)
         print("Done")
 
-# Parse XML from a file object
-# with open("./xml/FHRS900en-GB.xml") as file:
-#    soup = BeautifulSoup(file, features="lxml-xml")
-#    print(type(soup))
-
-# with open('./xml/FHRS900en-GB.xml', 'r') as myfile:
-#     obj = xmltodict.parse(myfile.read())
-# print(json.dumps(obj))
-
 combine = True
 
 if combine:
@@ -59,34 +50,3 @@ if combine:
     for region in ni_json:
         for business in region:
             print(business["BusinessName"])
-
-    # for region in ni_data:
-    #     for business in region:
-    #         print(type(business['BusinessName']))
-
-
-
-    # ni_data(json.dumps(obj))
-    # <FHRSEstablishment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    # <EstablishmentCollection>
-    # <EstablishmentDetail>
-    # ....<FHRSID>1153550</FHRSID>
-
-    # i = 0
-    # ni_combined = {}
-    # for dictionary in ni_data:
-    #     for l in list:
-    #         ni_combined[i] = l
-    #         i += 1
-
-    # ni_json = json.dumps(ni_combined)
-
-    # f = open("ni_combined.json", "w")
-    # f.write(ni_json)
-    # f.close()
-
-# with open('ni_combined.json', 'r') as f:
-#   ni_json = json.load(f)
-
-# for key, value in ni_json.items():
-#     print(key, '->', value)
