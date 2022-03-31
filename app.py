@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, json
 from urllib.request import urlopen
 
+# paginate, filter and sort
+
 app = Flask(__name__)
 update_users = []
 
@@ -28,8 +30,6 @@ def json_remote():
     response = urlopen(url)
     github_urls = json.loads(response.read()) 
     return render_template('json_remote.html', urls=github_urls)
-
-
 
 @app.route('/json/add', methods=['POST'])
 def json_add():
