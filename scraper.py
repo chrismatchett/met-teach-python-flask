@@ -28,9 +28,9 @@ if download:
         urlretrieve(link, filename)
         print("Done")
 
-combine = True
+combine_ni = False
 
-if combine:
+if combine_ni:
     ni_data = []
 
     for f in os.listdir('./xml/NI'):
@@ -48,5 +48,29 @@ if combine:
       ni_json = json.load(f)
 
     for region in ni_json:
+        for business in region:
+            print(business["BusinessName"])
+
+combine_uk = True
+
+if combine_uk:
+    uk_data = []
+
+    for f in os.listdir('./xml/ALL'):
+        with open('./xml/ALL/' + f, 'r') as myfile:
+            print(f)
+            obj = xmltodict.parse(myfile.read())
+            uk_data.append(obj['FHRSEstablishment']['EstablishmentCollection']['EstablishmentDetail'])
+
+    uk_json = json.dumps(uk_data)
+
+    f = open("uk_combined.json", "w")
+    f.write(uk_json)
+    f.close()
+
+    with open('uk_combined.json', 'r') as f:
+      uk_json = json.load(f)
+
+    for region in uk_json:
         for business in region:
             print(business["BusinessName"])
