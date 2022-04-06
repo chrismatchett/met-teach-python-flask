@@ -1,6 +1,6 @@
 # Python Examples
 
-Simple Python code examples using Python, Flask and Bootstrap
+Simple Python code examples using Python, Flask and Bootstrap.
 
 ## Flask Quickstart
 

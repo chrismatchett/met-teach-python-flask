@@ -57,7 +57,7 @@
         <div class="col-md-12">
             <div class="h-100 mb-4">
                 <h2>What is Flask?</h2>
-                <p>Flask is a <a href="https://en.wikipedia.org/wiki/Web_framework">web framework</a>. It makes creating websites a lot easier for developers. For example, it simplifies working with urls (routing) and sending data between web pages.</p>
+                <p>Flask is a <a href="https://en.wikipedia.org/wiki/Web_framework">web framework</a>. It makes creating websites a lot easier for developers. Flask simplifies working with urls (routing) and sending data between web pages.</p>
                 <a href="https://flask.palletsprojects.com/en/2.1.x/" class="btn btn-outline-secondary">
                     Flask Documentation
                 </a>
@@ -69,7 +69,7 @@
           <div class="col-md-12">
               <div class="h-100 mt-4 mb-4">
               <h2>What is Bootstrap?</h2>
-              <p>Bootstrap is a CSS framework. It makes creating websites a lot easier for developers. For example, how professional a website looks and how easy it is to interact with the site.</p>
+              <p>Bootstrap is a CSS framework. Developers use Bootstrap to create professional looking websites which are visually pleasing.</p>
               <a href="https://getbootstrap.com/" class="btn btn-outline-secondary">Bootstrap Documentation</a>
               </div>
           </div>
@@ -93,7 +93,7 @@
               <div class="col-md-12">
                   <div class="h-100 mt-4 mb-4">
                   <h2>Flask Routing</h2>
-                  <p>When you go to a web page your computer sends a GET or POST request to the web server where the web page lives. There are more types of requests.</p>
+                  <p>When you go to a web page your computer sends a GET or POST request to the web server where the web page lives.</p>
                   <a href="https://www.w3schools.com/tags/ref_httpmethods.asp" class="btn btn-outline-secondary">HTTP Request Methods</a>
                   </div>
               </div>
@@ -118,7 +118,7 @@
                   <div class="h-100 mt-4 mb-4">
                   <h2>Flask POST</h2>
                   <p>It is common to use the POST method when sending data using <a href="https://www.w3schools.com/html/html_forms.asp">HTML Forms</a>.
-                  The Form below sends an email address to the <span class="text-warning">/email</span> route.
+                  The Form below sends an email address to the <span class="text-warning">/email</span> route in app.py.
                   Setting <span class="text-success">type="email"</span> and <span class="text-success">required</span> in the Form's HTML Input tag enables Bootstrap <a href="https://getbootstrap.com/docs/5.0/forms/validation/">validation</a></span>
                   </p>
                   <form action="/email" method="post">
@@ -140,12 +140,12 @@
           <div class="rowborder-bottomalign-items-md-stretch border-bottom">
             <div class="col-md-12">
                 <div class="h-100 mt-4 mb-4">
-                        <h2>Flask JSON local</h2>
+                        <h2>Flask JSON (read local file)</h2>
                         <p>JSON is the default format used to send data on the Web.
-                            The <span class="text-warning">/json/local</span> route reads JSON data from a file called users.json in the sites's data folder.
+                            The <span class="text-warning">/json/local</span> route reads JSON data from a text file called users.json in the sites's data folder.
                         </p>
                         <a href="/json/local" class="btn btn-outline-secondary">
-                            Read local JSON
+                            Read local JSON File
                         </a>
                     </div>
                 </div>
@@ -154,10 +154,10 @@
             <div class="rowborder-bottomalign-items-md-stretch border-bottom">
               <div class="col-md-12">
                   <div class="h-100 mt-4 mb-4">
-                          <h2>Flask JSON Add</h2>
+                          <h2>Flask JSON (add to existing list)</h2>
                           <p>The HTML Form below uses the <span class="text-warning">/json/add</span> route in app.py to add your name to the list of names stored in the server's memory.
                             The server's memory includes the list of names from the users.json file and any names you add.
-                            Note how the <span class="text-warning">update_users</span> variable is an empty, global list.
+                            Note how the variable, <span class="text-warning">update_users</span>, is an empty, global list.
                           </p>
                           <form action="/json/add" method="post">
                               <div class="row">
@@ -177,11 +177,11 @@
             <div class="rowborder-bottomalign-items-md-stretch  border-bottom">
               <div class="col-md-12">
                   <div class="h-100 mt-4 mb-4">
-                  <h2>Flask JSON remote</h2>
+                  <h2>Flask JSON (read remote file)</h2>
                   <p>You often retrieve JSON data from a remote website, usually an <a href="https://en.wikipedia.org/wiki/API">API</a>.
-                  The <span class="text-warning">/json/remote</span> route JSON data from the <a href="https://github.com/">Github</a> API.
+                  The <span class="text-warning">/json/remote</span> route reads JSON data from the <a href="https://github.com/">Github</a> API.
                   </p>
-                  <a href="/json/remote" class="btn btn-outline-secondary">Read remote JSON</a>
+                  <a href="/json/remote" class="btn btn-outline-secondary">Read remote JSON file</a>
                   </div>
               </div>
           </div>
@@ -189,11 +189,11 @@
           <div class="rowborder-bottomalign-items-md-stretch  border-bottom">
             <div class="col-md-12">
                 <div class="h-100 mt-4 mb-4">
-                <h2>Flask API - Random Duck</h2>
-                <p>The <span class="text-warning">/duck</span> route on app.py gets JSON data from the API found at <a href="https://random-d.uk/api">https://random-d.uk/api</a>.
+                <h2>Flask - Random Duck</h2>
+                <p>The <span class="text-warning">/duck</span> route in app.py gets JSON data from the API found at <a href="https://random-d.uk/api">https://random-d.uk/api</a>.
                 The JSON data is then used to display a random image of a duck.
                 </p>
-                <a href="/json/remote" class="btn btn-outline-secondary">Read remote JSON</a>
+                <a href="/duck" class="btn btn-outline-secondary">GET Random Duck</a>
                 </div>
             </div>
         </div>
@@ -201,11 +201,11 @@
         <div class="rowborder-bottomalign-items-md-stretch  border-bottom">
           <div class="col-md-12">
               <div class="h-100 mt-4 mb-4">
-              <h2>Flask API - Duck Pagination</h2>
-              <p>The <span class="text-warning">/duck</span> route on app.py gets JSON data from the API found at <a href="https://random-d.uk/api">https://random-d.uk/api</a>.
+              <h2>Flask - Duck Pagination</h2>
+              <p>The <span class="text-warning">/duck</span> route in app.py gets JSON data from the API found at <a href="https://random-d.uk/api">https://random-d.uk/api</a>.
               The JSON data is then used to <a href="https://dictionary.cambridge.org/dictionary/english/pagination">paginate</a> through all the pictures of ducks available from the API.
               </p>
-              <a href="/json/remote" class="btn btn-outline-secondary">Read remote JSON</a>
+              <a href="/ducks" class="btn btn-outline-secondary">GET Ducks and Paginate</a>
               </div>
           </div>
       </div>
