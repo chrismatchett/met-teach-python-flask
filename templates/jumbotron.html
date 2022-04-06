@@ -43,7 +43,7 @@
         </a>
         </header>
 
-        <div class="p-5 mb-4 bg-light rounded-3 border">
+        <div class="p-5 mb-4 bg-light border rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-5 fw-bold">Python Examples</h1>
             <p class="col-md-8 fs-4">
@@ -53,28 +53,31 @@
         </div>
         </div>
 
-        <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-            <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+        <div class="col-md-12">
+            <div class="h-100 mb-4">
                 <h2>What is Flask?</h2>
                 <p>Flask is a <a href="https://en.wikipedia.org/wiki/Web_framework">web framework</a>. It makes creating websites a lot easier for developers. For example, it simplifies working with urls (routing) and sending data between web pages.</p>
-                <a href="https://flask.palletsprojects.com/en/2.1.x/" class="btn btn-outline-light">
+                <a href="https://flask.palletsprojects.com/en/2.1.x/" class="btn btn-outline-secondary">
                     Flask Documentation
                 </a>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>Bootstrap</h2>
-            <p>Bootstrap is a CSS framework. It makes creating websites a lot easier for developers. For example, how professional a website looks and how easy it is to interact with the site.</p>
-            <a href="https://getbootstrap.com/" class="btn btn-outline-secondary">Bootstrap Documentation</a>
-            </div>
-        </div>
         </div>
 
-        <div class="row align-items-md-stretch mt-4">
-            <div class="col-md-6">
-                <div class="h-100 p-5 bg-light border rounded-3">
+        <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+          <div class="col-md-12">
+              <div class="h-100 mt-4 mb-4">
+              <h2>What is Bootstrap?</h2>
+              <p>Bootstrap is a CSS framework. It makes creating websites a lot easier for developers. For example, how professional a website looks and how easy it is to interact with the site.</p>
+              <a href="https://getbootstrap.com/" class="btn btn-outline-secondary">Bootstrap Documentation</a>
+              </div>
+          </div>
+          </div>
+
+          <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+            <div class="col-md-12">
+                <div class="h-100 mt-4 mb-4">
                     <h2>Flask Templates</h2>
                     <p>Rather than generate HTML with Python the pages of this website use templates.
                     Templates are a good way to mix simple HTML code with dynamic Python code.
@@ -84,54 +87,59 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="h-100 p-5 text-white bg-dark rounded-3">
-                
-                <h2>Flask Routing</h2>
-                <p>When you go to a web page your computer sends a GET or POST request to the web server where the web page lives. There are more types of requests.</p>
-                <a href="https://www.w3schools.com/tags/ref_httpmethods.asp" class="btn btn-outline-light">HTTP Request Methods</a>
-                </div>
-            </div>
             </div>
 
-            <div class="row align-items-md-stretch mt-4">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+              <div class="col-md-12">
+                  <div class="h-100 mt-4 mb-4">
+                  <h2>Flask Routing</h2>
+                  <p>When you go to a web page your computer sends a GET or POST request to the web server where the web page lives. There are more types of requests.</p>
+                  <a href="https://www.w3schools.com/tags/ref_httpmethods.asp" class="btn btn-outline-secondary">HTTP Request Methods</a>
+                  </div>
+              </div>
+              </div>
+
+              <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+                <div class="col-md-12">
+                    <div class="h-100 mt-4 mb-4">
                         <h2>Flask GET</h2>
                         <p>The link below sends the data "World" to the <span class="text-warning">/hello/&lt;name&gt;</span> route of this website's Python file, app.py.
                             As the route does not have a request method specified it assumes the GET method.
                         </p>
-                        <a href="/hello/World" class="btn btn-outline-light">
+                        <a href="/hello/World" class="btn btn-outline-secondary">
                             GET
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Flask POST</h2>
-                    <p>It is common to use the POST method when sending data using <a href="https://www.w3schools.com/html/html_forms.asp">HTML Forms</a>.
-                    The Form below sends an email address to the <span class="text-warning">/email</span> route.
-                    Setting <span class="text-success">type="email"</span> and <span class="text-success">required</span> in the Form's HTML Input tag enables Bootstrap <a href="https://getbootstrap.com/docs/5.0/forms/validation/">validation</a></span>
-                    </p>
-                    <form action="/email" method="post">
-                        <div class="row">
-                          <div class="col">
-                            <input type="email" name="email_address" class="form-control" placeholder="Email Address" required>
-                          </div>
-                          <div class="col">
-                            <button type="submit" class="btn btn-outline-secondary">
-                            POST</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                </div>
             </div>
 
+            <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+              <div class="col-md-12">
+                  <div class="h-100 mt-4 mb-4">
+                  <h2>Flask POST</h2>
+                  <p>It is common to use the POST method when sending data using <a href="https://www.w3schools.com/html/html_forms.asp">HTML Forms</a>.
+                  The Form below sends an email address to the <span class="text-warning">/email</span> route.
+                  Setting <span class="text-success">type="email"</span> and <span class="text-success">required</span> in the Form's HTML Input tag enables Bootstrap <a href="https://getbootstrap.com/docs/5.0/forms/validation/">validation</a></span>
+                  </p>
+                  <form action="/email" method="post">
+                      <div class="row">
+                        <div class="col">
+                          <input type="email" name="email_address" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="col">
+                          <button type="submit" class="btn btn-outline-secondary">
+                          POST</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
 
-            <div class="row align-items-md-stretch mt-4">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
+
+          <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+            <div class="col-md-12">
+                <div class="h-100 mt-4 mb-4">
                         <h2>Flask JSON local</h2>
                         <p>JSON is the default format used to send data on the Web.
                             The <span class="text-warning">/json/local</span> route reads JSON data from a file called users.json in the sites's data folder.
@@ -141,21 +149,23 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 text-white bg-dark rounded-3">
-                    
-                    <h2>Flask JSON remote</h2>
-                    <p>You often retrieve JSON data from a remote website, usually an <a href="https://en.wikipedia.org/wiki/API">API</a>.
-                    The <span class="text-warning">/json/remote</span> route JSON data from the <a href="https://github.com/">Github</a> API.
-                    </p>
-                    <a href="/json/remote" class="btn btn-outline-light">Read remote JSON</a>
-                    </div>
-                </div>
             </div>
 
-            <div class="row align-items-md-stretch mt-4">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+              <div class="col-md-12">
+                  <div class="h-100 mt-4 mb-4">
+                  <h2>Flask JSON remote</h2>
+                  <p>You often retrieve JSON data from a remote website, usually an <a href="https://en.wikipedia.org/wiki/API">API</a>.
+                  The <span class="text-warning">/json/remote</span> route JSON data from the <a href="https://github.com/">Github</a> API.
+                  </p>
+                  <a href="/json/remote" class="btn btn-outline-secondary">Read remote JSON</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="rowborder-bottomalign-items-md-stretch border-bottom">
+            <div class="col-md-12">
+                <div class="h-100 mt-4 mb-4">
                         <h2>Flask JSON Add</h2>
                         <p>The link below sends the data "World" to the <span class="text-warning">/hello/&lt;name&gt;</span> route of this website's Python file, app.py.
                             As the route does not have a request method specified it assumes the GET method.
@@ -173,27 +183,30 @@
                           </form>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2>Flask JSON Add</h2>
-                    <p>It is common to use the POST method when sending data using <a href="https://www.w3schools.com/html/html_forms.asp">HTML Forms</a>.
-                    The Form below sends an email address to the <span class="text-warning">/email</span> route.
-                    Setting <span class="text-success">type="email"</span> and <span class="text-success">required</span> in the Form's HTML Input tag enables Bootstrap <a href="https://getbootstrap.com/docs/5.0/forms/validation/">validation</a></span>
-                    </p>
-                    <form action="/email" method="post">
-                        <div class="row">
-                          <div class="col">
-                            <input type="email" name="email_address" class="form-control" placeholder="Email Address" required>
-                          </div>
-                          <div class="col">
-                            <button type="submit" class="btn btn-outline-secondary">
-                            POST</button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                </div>
             </div>
+
+            <div class="rowborder-bottomalign-items-md-stretch">
+              <div class="col-md-12">
+                  <div class="h-100 mt-4 mb-4">
+                  <h2>Flask JSON Add</h2>
+                  <p>It is common to use the POST method when sending data using <a href="https://www.w3schools.com/html/html_forms.asp">HTML Forms</a>.
+                  The Form below sends an email address to the <span class="text-warning">/email</span> route.
+                  Setting <span class="text-success">type="email"</span> and <span class="text-success">required</span> in the Form's HTML Input tag enables Bootstrap <a href="https://getbootstrap.com/docs/5.0/forms/validation/">validation</a></span>
+                  </p>
+                  <form action="/email" method="post">
+                      <div class="row">
+                        <div class="col">
+                          <input type="email" name="email_address" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="col">
+                          <button type="submit" class="btn btn-outline-secondary">
+                          POST</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+              </div>
+          </div>
 
         <footer class="pt-3 mt-4 text-muted border-top">
         &copy; 2021
