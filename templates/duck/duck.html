@@ -1,0 +1,8 @@
+<!doctype html>
+<title>Random Duck</title>
+{% if duck %}
+    <h1>Random Duck</h1>
+    <p><img src="{{ duck.url }}" /></p>
+{% else %}
+  <h1>No Ducks</h1>
+{% endif %}

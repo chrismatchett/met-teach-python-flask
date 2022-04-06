@@ -1,9 +1,6 @@
 from flask import Flask, render_template, request, json
-from urllib.request import urlopen
-
-# https://data.police.uk/api/forces
-
-# paginate, filter and sort
+from urllib.request import Request, urlopen
+from flask_paginate import Pagination, get_page_parameter
 
 app = Flask(__name__)
 update_users = []
@@ -44,3 +41,44 @@ def json_add():
     
     update_users.append({"name": request.form.get('name')})
     return render_template('json_add.html', users=update_users)
+
+# Random Duck API
+
+duck_url = "https://random-d.uk/api/v2/"
+
+# paginate, filter and sort
+
+@app.route("/duck")
+def duck():
+    
+    global duck_url
+ 
+    query = duck_url + "random"
+    req = Request(query, headers={'User-Agent': 'Mozilla/5.0'})
+    res = urlopen(req)
+    duck_json = json.loads(res.read()) 
+
+    return render_template('duck/duck.html', duck=duck_json)
+
+@app.route("/ducks")
+def ducks():
+    
+    global duck_url
+    # "image_count": 282,
+    # "images": []
+
+    search = False
+    q = request.args.get('q')
+    if q:
+        search = True
+
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+ 
+    query = duck_url + "list"
+    req = Request(query, headers={'User-Agent': 'Mozilla/5.0'})
+    res = urlopen(req)
+    ducks_json = json.loads(res.read())
+
+    pagination = Pagination(page=page, total=ducks_json['image_count'], search=search, record_name='ducks') 
+    
+    return render_template('duck/ducks.html', ducks=ducks_json['images'], url=duck_url, pagination=pagination)

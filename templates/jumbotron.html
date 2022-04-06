@@ -154,56 +154,34 @@
             <div class="rowborder-bottomalign-items-md-stretch border-bottom">
               <div class="col-md-12">
                   <div class="h-100 mt-4 mb-4">
+                          <h2>Flask JSON Add</h2>
+                          <p>The HTML Form below uses the <span class="text-warning">/json/add</span> route in app.py to add your name to the list of names stored in the server's memory.
+                            The server's memory includes the list of names from the users.json file and any names you add.
+                            Note how the <span class="text-warning">update_users</span> variable is an empty, global list.
+                          </p>
+                          <form action="/json/add" method="post">
+                              <div class="row">
+                                <div class="col">
+                                  <input type="name" name="name" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col">
+                                  <button type="submit" class="btn btn-outline-secondary">
+                                  POST</button>
+                                </div>
+                              </div>
+                            </form>
+                      </div>
+                  </div>
+              </div>
+
+            <div class="rowborder-bottomalign-items-md-stretch">
+              <div class="col-md-12">
+                  <div class="h-100 mt-4 mb-4">
                   <h2>Flask JSON remote</h2>
                   <p>You often retrieve JSON data from a remote website, usually an <a href="https://en.wikipedia.org/wiki/API">API</a>.
                   The <span class="text-warning">/json/remote</span> route JSON data from the <a href="https://github.com/">Github</a> API.
                   </p>
                   <a href="/json/remote" class="btn btn-outline-secondary">Read remote JSON</a>
-                  </div>
-              </div>
-          </div>
-
-          <div class="rowborder-bottomalign-items-md-stretch border-bottom">
-            <div class="col-md-12">
-                <div class="h-100 mt-4 mb-4">
-                        <h2>Flask JSON Add</h2>
-                        <p>The link below sends the data "World" to the <span class="text-warning">/hello/&lt;name&gt;</span> route of this website's Python file, app.py.
-                            As the route does not have a request method specified it assumes the GET method.
-                        </p>
-                        <form action="/json/add" method="post">
-                            <div class="row">
-                              <div class="col">
-                                <input type="name" name="name" class="form-control" placeholder="Your Name" required>
-                              </div>
-                              <div class="col">
-                                <button type="submit" class="btn btn-outline-secondary">
-                                POST</button>
-                              </div>
-                            </div>
-                          </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rowborder-bottomalign-items-md-stretch">
-              <div class="col-md-12">
-                  <div class="h-100 mt-4 mb-4">
-                  <h2>Flask JSON Add</h2>
-                  <p>It is common to use the POST method when sending data using <a href="https://www.w3schools.com/html/html_forms.asp">HTML Forms</a>.
-                  The Form below sends an email address to the <span class="text-warning">/email</span> route.
-                  Setting <span class="text-success">type="email"</span> and <span class="text-success">required</span> in the Form's HTML Input tag enables Bootstrap <a href="https://getbootstrap.com/docs/5.0/forms/validation/">validation</a></span>
-                  </p>
-                  <form action="/email" method="post">
-                      <div class="row">
-                        <div class="col">
-                          <input type="email" name="email_address" class="form-control" placeholder="Email Address" required>
-                        </div>
-                        <div class="col">
-                          <button type="submit" class="btn btn-outline-secondary">
-                          POST</button>
-                        </div>
-                      </div>
-                    </form>
                   </div>
               </div>
           </div>

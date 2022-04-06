@@ -1,0 +1,15 @@
+
+
+
+
+<!doctype html>
+<title>Ducks</title>
+
+{% if ducks %}
+    <h1>Ducks</h1>
+    <p><img src="{{ url }}{{ ducks[pagination.page] }}" width="320" /></p>
+    {{ pagination.info }}
+    {{ pagination.links }}
+{% else %}
+  <h1>No Ducks</h1>
+{% endif %}
