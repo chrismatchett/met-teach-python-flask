@@ -1,5 +1,11 @@
 <!doctype html>
 <title>Add JSON from Flask</title>
+
+<form action="/json/users/add" method="post">
+  <input type="name" name="name" placeholder="Your Name" required="">
+  <input type="submit" value="POST">
+</form>
+
 {% if users %}
     <h1>Users</h1>
     {% for user in users %}

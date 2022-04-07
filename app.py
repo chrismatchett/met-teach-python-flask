@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request, json
+from flask import Flask, render_template, request, redirect, url_for, json
 from urllib.request import Request, urlopen
 from flask_paginate import Pagination, get_page_parameter
 
 app = Flask(__name__)
-update_users = []
+users = []
 
 @app.route("/")
 def home():
@@ -20,8 +20,8 @@ def email():
 @app.route("/json/local")
 def json_local():
     with open('data/users.json') as f:
-        users = json.load(f)
-    return render_template('json_local.html', users=users)
+        local_users = json.load(f)
+    return render_template('json_local.html', users=local_users)
 
 @app.route("/json/remote")
 def json_remote():
@@ -30,17 +30,24 @@ def json_remote():
     github_urls = json.loads(response.read()) 
     return render_template('json_remote.html', urls=github_urls)
 
-@app.route('/json/add', methods=['POST'])
+@app.route('/json/users', methods=['GET'])
+def json_users():
+
+    global users
+
+    if len(users) == 0:
+        with open('data/users.json') as f:
+            users = json.load(f)
+
+    return render_template('json_users.html', users=users)
+
+@app.route('/json/users/add', methods=['POST'])
 def json_add():
 
-    global update_users
+    global users
 
-    if len(update_users) == 0:
-        with open('data/users.json') as f:
-            update_users = json.load(f)
-    
-    update_users.append({"name": request.form.get('name')})
-    return render_template('json_add.html', users=update_users)
+    users.append({"name": request.form.get('name')})
+    return redirect(url_for('json_users')) 
 
 # Random Duck API
 

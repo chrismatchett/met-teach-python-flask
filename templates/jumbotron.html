@@ -155,21 +155,14 @@
               <div class="col-md-12">
                   <div class="h-100 mt-4 mb-4">
                           <h2>Flask JSON (add to existing list)</h2>
-                          <p>The HTML Form below uses the <span class="text-warning">/json/add</span> route in app.py to add your name to the list of names stored in the server's memory.
-                            The server's memory includes the list of names from the users.json file and any names you add.
-                            Note how the variable, <span class="text-warning">update_users</span>, is an empty, global list.
+                          <p>The <span class="text-warning">/json/users</span> route in app.py shows a list of users in the website's memory.
+                            This list includes names from the users.json file and any names added using the HTML form.
+                            Note how the variable <span class="text-warning">users</span> is an empty, global list. 
+                            It also worth noting the<span class="text-warning">/json/users/add</span> route redirects back to <span class="text-warning">/json/users</span>.
                           </p>
-                          <form action="/json/add" method="post">
-                              <div class="row">
-                                <div class="col">
-                                  <input type="name" name="name" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col">
-                                  <button type="submit" class="btn btn-outline-secondary">
-                                  POST</button>
-                                </div>
-                              </div>
-                            </form>
+                          <a href="/json/users" class="btn btn-outline-secondary">
+                            Add users to Website's Memory
+                        </a>
                       </div>
                   </div>
               </div>
