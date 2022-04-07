@@ -20,6 +20,13 @@ $env:FLASK_DEBUG = 1
 flask run
 ```
 
+### Generate a list of packages
+The command below is useful if you plan to connect your code repository to a Microsoft Azure App Service.
+
+```
+pip freeze --local > requirements.txt
+```
+
 ## Public APIs
 * https://github.com/public-apis/public-apis
 
