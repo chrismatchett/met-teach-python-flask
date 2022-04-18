@@ -19,7 +19,7 @@ pip install Flask
 
 $env:FLASK_APP = "app"
 $env:FLASK_DEBUG = 1
-flask run
+python -m flask run
 ```
 
 ### Generate a list of packages
