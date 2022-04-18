@@ -2,7 +2,7 @@
 
 Simple Python code examples using Python, Flask and Bootstrap.
 
-The site is viewable here, <a href="https://flask-bootstrap.azurewebsites.net/">https://flask-bootstrap.azurewebsites.net/countries</a>.
+The site is viewable here, <a href="https://flask-bootstrap.azurewebsites.net/">https://flask-bootstrap.azurewebsites.net</a>.
 
 ## Flask Quickstart
 
