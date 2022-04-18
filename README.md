@@ -2,6 +2,8 @@
 
 Simple Python code examples using Python, Flask and Bootstrap.
 
+The site is viewable here, <a href="https://flask-bootstrap.azurewebsites.net/">https://flask-bootstrap.azurewebsites.net/countries</a>.
+
 ## Flask Quickstart
 
 Here is a quickstart guide for installing Python Flask on Microsoft Windows. The full documentation is here, <a href="https://flask.palletsprojects.com/en/2.1.x/installation/#install-flask">https://flask.palletsprojects.com/en/2.1.x/installation/#install-flask</a>.
