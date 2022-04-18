@@ -1,3 +1,8 @@
+# venv\scripts\activate
+# $env:FLASK_APP = "app" 
+# $env:FLASK_DEBUG = 1 
+# python -m flask run
+
 from flask import Flask, render_template, request, redirect, url_for, json
 from urllib.request import Request, urlopen
 from flask_paginate import Pagination, get_page_parameter
@@ -89,3 +94,30 @@ def ducks():
     pagination = Pagination(page=page, total=ducks_json['image_count'], search=search, record_name='ducks') 
     
     return render_template('duck/ducks.html', ducks=ducks_json['images'], url=duck_url, pagination=pagination)
+
+# FHRS API
+
+fhrs_url = "http://api.ratings.food.gov.uk"
+
+@app.route("/countries")
+def countries():
+    
+    global fhrs_url
+ 
+    # page = 1
+    # page_size = 10
+    
+    # Create the URL string to query the FHRS API
+    # In this case, http://api.ratings.food.gov.uk/Countries/basic
+    # I found the API query failed without adding, headers = {'x-api-version': 2}
+    # You may want to limit the number of results you bring back from the API
+    # For example, query = fhrs_url + '/Countries/basic/{}/{}'.format(page, page_size)  
+
+    query = fhrs_url + '/Countries/basic'
+    headers = {'x-api-version': 2}
+
+    req = Request(query, headers=headers)
+    res = urlopen(req)
+    fhrs_json = json.loads(res.read()) 
+
+    return render_template('countries.html', data=fhrs_json)

@@ -1,0 +1,9 @@
+<!doctype html>
+<title>List of Countries</title>
+{% if data %}
+    {% for country in data.countries %}
+        <p>{{ country.name }}</p>
+    {% endfor %}
+{% else %}
+  <h1>No countries</h1>
+{% endif %}

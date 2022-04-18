@@ -1,0 +1,68 @@
+{
+    "countries": [
+        {
+            "id": 1,
+            "name": "England",
+            "nameKey": "England",
+            "code": "",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://api.ratings.food.gov.uk/countries/1"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Northern Ireland",
+            "nameKey": "Northern Ireland",
+            "code": "",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://api.ratings.food.gov.uk/countries/2"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Scotland",
+            "nameKey": "Scotland",
+            "code": "",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://api.ratings.food.gov.uk/countries/3"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Wales",
+            "nameKey": "Wales",
+            "code": "",
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://api.ratings.food.gov.uk/countries/4"
+                }
+            ]
+        }
+    ],
+    "meta": {
+        "dataSource": "API",
+        "extractDate": "2022-04-18T10:49:44.0636488+01:00",
+        "itemCount": 4,
+        "returncode": "OK",
+        "totalCount": 4,
+        "totalPages": 1,
+        "pageSize": 4,
+        "pageNumber": 1
+    },
+    "links": [
+        {
+            "rel": "self",
+            "href": "http://api.ratings.food.gov.uk/countries"
+        }
+    ]
+}
