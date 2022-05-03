@@ -8,11 +8,10 @@
 import datetime
 
 import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib.dates import DayLocator, DateFormatter
-import base64
 from io import BytesIO
 
 import random
@@ -140,7 +139,6 @@ def countries():
 
 @app.route("/graph")
 def graph():
-
     str_date = datetime.datetime.now()
     return render_template('graph.html', date=str_date)
 
@@ -154,34 +152,25 @@ def plot_png():
 def create_figure():
 
     dataset = "./data/NY-City-Central-Park-Historical-Temperature-Data.csv"
-
     # dataframe
     df = pd.read_csv(dataset)
-
-    pd.set_option("display.max.columns", None)
-
     # Convert the date column, 18690101, to a Python datetime
     df['date'] = pd.to_datetime(df['date'], format='%Y%m%d')
-
     # Locate a range of dates
     start_date = '07-01-2020'
     end_date = '08-01-2020'
-
     mask = (df['date'] > start_date) & (df['date'] <= end_date)
     df = df.loc[mask]
-
     # Convert the min, max columns from Fahredheit to Celsius
     # (32°F − 32) × 5/9 = 0°C
     df['min'] = (df['min']-32) * 5/9
     df['max'] = (df['max']-32) * 5/9
-    
+    # Create the Figure    
     fig = Figure()
     ax = fig.subplots()
     ax.plot(df['date'], df['max'])
-
     #defines the tick location 
     ax.xaxis.set_major_locator(DayLocator())
-
     #defines the label format
     ax.xaxis.set_major_formatter(DateFormatter("%d-%m"))
     ax.tick_params(axis="x", labelrotation= 90)
