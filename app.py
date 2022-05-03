@@ -3,6 +3,7 @@
 # $env:FLASK_DEBUG = 1 
 # python -m flask run
 
+import datetime
 from flask import Flask, render_template, request, redirect, url_for, json
 from urllib.request import Request, urlopen
 from flask_paginate import Pagination, get_page_parameter
@@ -121,3 +122,12 @@ def countries():
     fhrs_json = json.loads(res.read()) 
 
     return render_template('countries.html', data=fhrs_json)
+
+# Graph
+
+@app.route("/graph")
+def graph():
+
+    str_date = datetime.datetime.now()
+    
+    return render_template('graph.html', date=str_date)
